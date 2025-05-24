@@ -2,6 +2,7 @@ import { useEffect, useState, memo } from "react";
 import { useAppDispatch } from "@store/hooks";
 import { actLikeToggle } from "@store/wishlist/wishlistSlice";
 import { addToCart } from "@store/cart/cartSlice";
+import { addToast } from "@store/toasts/toastsSlice";
 import { ProductInfo } from "@components/eCommerce";
 import Like from "@assets/svg/like.svg?react";
 import LikeFill from "@assets/svg/like-fill.svg?react";
@@ -45,6 +46,13 @@ const Product = memo(
 
     const addToCartHandler = () => {
       dispatch(addToCart(id));
+      dispatch(
+        addToast({
+          type: "success",
+          title: "Add to cart",
+          message: `Item: ${title} added to cart`,
+        })
+      );
       setIsBtnDisabled(true);
     };
 
@@ -54,8 +62,27 @@ const Product = memo(
           setIsLoading(true);
           dispatch(actLikeToggle(id))
             .unwrap()
-            .then(() => setIsLoading(false))
-            .catch(() => setIsLoading(false));
+            .then(() => {
+              setIsLoading(false);
+              if (!isLiked) {
+                dispatch(
+                  addToast({
+                    type: "success",
+                    message: `${title} added to wishlist`,
+                  })
+                );
+              }
+            })
+            .catch(() => {
+              setIsLoading(false);
+              dispatch(
+                addToast({
+                  title: "Failed Operation",
+                  type: "error",
+                  message: `Failed to add wishlist, error from server`,
+                })
+              );
+            });
         }
       } else {
         setShowModal(true);
