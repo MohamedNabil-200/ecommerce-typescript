@@ -1,0 +1,36 @@
+.toastList {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 400px;
+}
+
+.toastItem {
+  position: relative;
+  overflow: hidden;
+}
+
+.toastItem h5 {
+  font-size: 16px;
+  text-decoration: capitalize;
+}
+
+.toastItem p {
+  font-size: 14px;
+  margin-bottom: 0;
+  text-decoration: capitalize;
+}
+
+.toastItem button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+.toastItem span {
+  min-height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
