@@ -32,7 +32,12 @@ const initialState: TToastsState = {
 const toastsSlice = createSlice({
   name: "toasts",
   initialState,
-  reducers: {},
+  reducers: {
+    removeToast: (state, action) => {
+      state.records = state.records.filter((el) => el.id !== action.payload);
+    },
+  },
 });
 
+export const { removeToast } = toastsSlice.actions;
 export default toastsSlice.reducer;

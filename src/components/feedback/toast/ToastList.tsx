@@ -10,7 +10,13 @@ const ToastList = () => {
   return (
     <div className={toastList}>
       {records.map(({ id, type, title, message }) => (
-        <ToastItem key={id} type={type} title={title} message={message} />
+        <ToastItem
+          key={id}
+          id={id}
+          type={type}
+          title={title}
+          message={message}
+        />
       ))}
     </div>
   );
