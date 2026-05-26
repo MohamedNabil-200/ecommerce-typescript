@@ -1,7 +1,7 @@
-import useLogin from "@hooks/useLogin";
+import useLogin from "@/hooks/useLogin";
 import { Navigate } from "react-router-dom";
-import { Heading } from "@components/common";
-import { Input } from "@components/forms";
+import { Heading } from "@/components/common";
+import { Input } from "@/components/forms";
 import { Form, Button, Row, Col, Alert, Spinner } from "react-bootstrap";
 
 const Login = () => {

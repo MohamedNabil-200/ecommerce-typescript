@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import actGetWishlist from "./act/actGetWishlist";
 import actLikeToggle from "./act/actLikeToggle";
-import { authLogout } from "@store/auth/authSlice";
-import { isString, TLoading, TProduct } from "@types";
+import { authLogout } from "@/store/auth/authSlice";
+import { isString, TLoading, TProduct } from "@/types";
 
 type TWishlistState = {
   itemsId: number[];
@@ -36,7 +36,7 @@ const wishlistSlice = createSlice({
       } else {
         state.itemsId = state.itemsId.filter((el) => el !== action.payload.id);
         state.productsFullInfo = state.productsFullInfo.filter(
-          (el) => el.id !== action.payload.id
+          (el) => el.id !== action.payload.id,
         );
       }
     });

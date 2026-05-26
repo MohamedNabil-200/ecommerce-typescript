@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { actAuthRegister, resetUI } from "@store/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { actAuthRegister, resetUI } from "@/store/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema, registerType } from "@validations/registerSchema";
-import useCheckEmailAvailability from "@hooks/useCheckEmailAvailability";
+import { registerSchema, registerType } from "@/validations/registerSchema";
+import useCheckEmailAvailability from "@/hooks/useCheckEmailAvailability";
 
 const useRegister = () => {
   const dispatch = useAppDispatch();

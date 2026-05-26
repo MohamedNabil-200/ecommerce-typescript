@@ -1,13 +1,13 @@
 import { createRoot } from "react-dom/client";
-import AppRouter from "@routes/AppRouter";
+import AppRouter from "@/routes/AppRouter";
 
 // Redux
-import { store, persistor } from "@store";
+import { store, persistor } from "@/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
-// axios Gloabal Config
-import "@services/axios-global";
+// axios Global Config
+import "@/services/axios-global";
 
 // Styles
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,5 +18,5 @@ createRoot(document.getElementById("root")!).render(
     <PersistGate loading={null} persistor={persistor}>
       <AppRouter />
     </PersistGate>
-  </Provider>
+  </Provider>,
 );

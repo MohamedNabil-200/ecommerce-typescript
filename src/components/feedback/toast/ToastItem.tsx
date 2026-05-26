@@ -1,6 +1,6 @@
-import { useAppDispatch } from "@store/hooks";
-import { removeToast } from "@store/toasts/toastsSlice";
-import { TToast } from "@types";
+import { useAppDispatch } from "@/store/hooks";
+import { removeToast } from "@/store/toasts/toastsSlice";
+import { TToast } from "@/types";
 import styles from "./styles.module.css";
 const { toastItem } = styles;
 

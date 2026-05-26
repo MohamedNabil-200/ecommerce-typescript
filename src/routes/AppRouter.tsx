@@ -2,34 +2,34 @@ import { lazy, Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Layouts
-const MainLayout = lazy(() => import("@layouts/MainLayout/MainLayout"));
+const MainLayout = lazy(() => import("@/layouts/MainLayout/MainLayout"));
 const ProfileLayout = lazy(
-  () => import("@layouts/ProfileLayout/ProfileLayout")
+  () => import("@/layouts/ProfileLayout/ProfileLayout"),
 );
 
 // Components
-import { PageSuspenseFallback } from "@components/feedback";
+import { PageSuspenseFallback } from "@/components/feedback";
 
 // Lottie Animation
-import { LottieHandler } from "@components/feedback";
+import { LottieHandler } from "@/components/feedback";
 
 // Protected Routes
-import ProtectedRoutes from "@components/Auth/ProtectedRoutes";
+import ProtectedRoutes from "@/components/Auth/ProtectedRoutes";
 
 // Pages
-const Home = lazy(() => import("@pages/Home"));
-const Wishlist = lazy(() => import("@pages/Wishlist"));
-const Cart = lazy(() => import("@pages/Cart"));
-const AboutUs = lazy(() => import("@pages/AboutUs"));
-const Categories = lazy(() => import("@pages/Categories"));
-const Products = lazy(() => import("@pages/Products"));
-const Login = lazy(() => import("@pages/Login"));
-const Register = lazy(() => import("@pages/Register"));
-const Account = lazy(() => import("@pages/Account"));
-const Orders = lazy(() => import("@pages/Orders"));
+const Home = lazy(() => import("@/pages/Home"));
+const Wishlist = lazy(() => import("@/pages/Wishlist"));
+const Cart = lazy(() => import("@/pages/Cart"));
+const AboutUs = lazy(() => import("@/pages/AboutUs"));
+const Categories = lazy(() => import("@/pages/Categories"));
+const Products = lazy(() => import("@/pages/Products"));
+const Login = lazy(() => import("@/pages/Login"));
+const Register = lazy(() => import("@/pages/Register"));
+const Account = lazy(() => import("@/pages/Account"));
+const Orders = lazy(() => import("@/pages/Orders"));
 
 // Error
-import Error from "@pages/Error";
+import Error from "@/pages/Error";
 
 const AppRouter = () => {
   const router = createBrowserRouter([

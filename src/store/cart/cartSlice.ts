@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getCartTotalQuantitySelector } from "./selectors/index";
 import actGetProductsByItems from "./act/actGetProductsByItems";
-import { isString, TProduct } from "@types";
-import { TLoading } from "@types";
+import { isString, TProduct } from "@/types";
+import { TLoading } from "@/types";
 
 type TCartState = {
   items: { [key: number]: number };
@@ -35,7 +35,7 @@ const cartSlice = createSlice({
     cartItemRemove: (state, action) => {
       delete state.items[action.payload];
       state.productsFullInfo = state.productsFullInfo.filter(
-        (el) => el.id !== action.payload
+        (el) => el.id !== action.payload,
       );
     },
     cartProductsFullInfoCleanUp: (state) => {

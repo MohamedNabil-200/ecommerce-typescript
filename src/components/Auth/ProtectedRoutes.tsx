@@ -1,4 +1,4 @@
-import { useAppSelector } from "@store/hooks";
+import { useAppSelector } from "@/store/hooks";
 import { Navigate } from "react-router-dom";
 
 const ProtectedRoutes = ({ children }: { children: React.ReactNode }) => {

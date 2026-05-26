@@ -1,7 +1,7 @@
-import useOrders from "@hooks/useOrders";
-import { Loading } from "@components/feedback";
-import { Heading } from "@components/common";
-import { ProductInfo } from "@components/eCommerce";
+import useOrders from "@/hooks/useOrders";
+import { Loading } from "@/components/feedback";
+import { Heading } from "@/components/common";
+import { ProductInfo } from "@/components/eCommerce";
 import { Table, Modal } from "react-bootstrap";
 
 const Orders = () => {

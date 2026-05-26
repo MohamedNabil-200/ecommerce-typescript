@@ -1,5 +1,5 @@
-import { useAppSelector } from "@store/hooks";
-import { Heading } from "@components/common";
+import { useAppSelector } from "@/store/hooks";
+import { Heading } from "@/components/common";
 
 const Profile = () => {
   const accountInfo = useAppSelector((state) => state.auth.user);

@@ -1,4 +1,4 @@
-import { LottieHandler } from "@components/feedback";
+import { LottieHandler } from "@/components/feedback";
 import { Col, Row } from "react-bootstrap";
 
 type GridListProps<T> = {

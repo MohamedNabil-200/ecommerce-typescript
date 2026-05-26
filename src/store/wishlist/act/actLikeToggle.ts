@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { axiosErrorHandler } from "@utils";
-import { RootState } from "@store/index";
+import { axiosErrorHandler } from "@/utils";
+import { RootState } from "@/store/index";
 
 const actLikeToggle = createAsyncThunk(
   "wishlist/actLikeToggle",
@@ -12,7 +12,7 @@ const actLikeToggle = createAsyncThunk(
 
     try {
       const isRecordExist = await axios.get(
-        `/wishlist?userId=${auth.user?.id}&productId=${id}`
+        `/wishlist?userId=${auth.user?.id}&productId=${id}`,
       );
       if (isRecordExist.data.length) {
         await axios.delete(`/wishlist/${isRecordExist.data[0].id}`);
@@ -24,7 +24,7 @@ const actLikeToggle = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(axiosErrorHandler(error));
     }
-  }
+  },
 );
 
 export default actLikeToggle;

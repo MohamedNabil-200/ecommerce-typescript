@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { authLogout } from "@store/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { authLogout } from "@/store/auth/authSlice";
 import { NavLink } from "react-router-dom";
 import { Badge, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import HeaderLeftBar from "./HeaderLeftBar/HeaderLeftBar";
 
 import styles from "./styles.module.css";
-import { actGetWishlist } from "@store/wishlist/wishlistSlice";
+import { actGetWishlist } from "@/store/wishlist/wishlistSlice";
 const { headerContainer, headerLogo } = styles;
 
 const Header = () => {

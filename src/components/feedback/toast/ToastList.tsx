@@ -1,4 +1,4 @@
-import { useAppSelector } from "@store/hooks";
+import { useAppSelector } from "@/store/hooks";
 import ToastItem from "./ToastItem";
 
 import styles from "./styles.module.css";

@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { RootState } from "@store";
+import { RootState } from "@/store";
 
 const getCartTotalQuantitySelector = createSelector(
   (state: RootState) => state.cart.items,
@@ -8,7 +8,7 @@ const getCartTotalQuantitySelector = createSelector(
       return acc + item;
     }, 0);
     return totalQuantity;
-  }
+  },
 );
 
 export { getCartTotalQuantitySelector };

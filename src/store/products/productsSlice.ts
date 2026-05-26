@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import actGetProductsByCatPrefix from "./act/actGetProductsByCatPrefix";
-import { isString, TLoading, TProduct } from "@types";
+import { isString, TLoading, TProduct } from "@/types";
 
-type TProductssState = {
+type TProductsState = {
   records: TProduct[];
   loading: TLoading;
   error: string | null;
 };
 
-const initialState: TProductssState = {
+const initialState: TProductsState = {
   records: [],
   loading: "idle",
   error: null,

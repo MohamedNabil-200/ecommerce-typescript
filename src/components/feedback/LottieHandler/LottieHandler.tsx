@@ -1,9 +1,9 @@
 import Lottie from "lottie-react";
-import notFound from "@assets/lotties/notFound.json";
-import error from "@assets/lotties/error.json";
-import loading from "@assets/lotties/loading.json";
-import empty from "@assets/lotties/empty.json";
-import success from "@assets/lotties/success.json";
+import notFound from "@/assets/lotties/notFound.json";
+import error from "@/assets/lotties/error.json";
+import loading from "@/assets/lotties/loading.json";
+import empty from "@/assets/lotties/empty.json";
+import success from "@/assets/lotties/success.json";
 
 const lottieFilesMap = {
   notFound,

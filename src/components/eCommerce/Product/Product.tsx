@@ -1,13 +1,13 @@
 import { useEffect, useState, memo } from "react";
-import { useAppDispatch } from "@store/hooks";
-import { actLikeToggle } from "@store/wishlist/wishlistSlice";
-import { addToCart } from "@store/cart/cartSlice";
-import { addToast } from "@store/toasts/toastsSlice";
-import { ProductInfo } from "@components/eCommerce";
-import Like from "@assets/svg/like.svg?react";
-import LikeFill from "@assets/svg/like-fill.svg?react";
+import { useAppDispatch } from "@/store/hooks";
+import { actLikeToggle } from "@/store/wishlist/wishlistSlice";
+import { addToCart } from "@/store/cart/cartSlice";
+import { addToast } from "@/store/toasts/toastsSlice";
+import { ProductInfo } from "@/components/eCommerce";
+import Like from "@/assets/svg/like.svg?react";
+import LikeFill from "@/assets/svg/like-fill.svg?react";
 import { Button, Modal, Spinner } from "react-bootstrap";
-import { TProduct } from "@types";
+import { TProduct } from "@/types";
 
 import styles from "./styles.module.css";
 const { maximumNotice, wishlistBtn } = styles;
@@ -51,7 +51,7 @@ const Product = memo(
           type: "success",
           title: "Add to cart",
           message: `Item: ${title} added to cart`,
-        })
+        }),
       );
       setIsBtnDisabled(true);
     };
@@ -69,7 +69,7 @@ const Product = memo(
                   addToast({
                     type: "success",
                     message: `${title} added to wishlist`,
-                  })
+                  }),
                 );
               }
             })
@@ -80,7 +80,7 @@ const Product = memo(
                   title: "Failed Operation",
                   type: "error",
                   message: `Failed to add wishlist, error from server`,
-                })
+                }),
               );
             });
         }
@@ -132,7 +132,7 @@ const Product = memo(
         </ProductInfo>
       </>
     );
-  }
+  },
 );
 
 export default Product;

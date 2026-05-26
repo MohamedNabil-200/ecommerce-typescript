@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useAppDispatch } from "@store/hooks";
-import { cartCleanupAfterPlaceOrder } from "@store/cart/cartSlice";
-import { actPlaceOrder } from "@store/orders/ordersSlice";
-import { TProduct } from "@types";
+import { useAppDispatch } from "@/store/hooks";
+import { cartCleanupAfterPlaceOrder } from "@/store/cart/cartSlice";
+import { actPlaceOrder } from "@/store/orders/ordersSlice";
+import { TProduct } from "@/types";
 import styles from "./styles.module.css";
 import { Button, Modal, Spinner } from "react-bootstrap";
 

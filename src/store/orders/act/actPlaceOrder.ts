@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import axiosErrorHandler from "@utils/axiosErrorHandler";
-import { RootState } from "@store/index";
-import { TOrderItem } from "@types";
+import axiosErrorHandler from "@/utils/axiosErrorHandler";
+import { RootState } from "@/store/index";
+import { TOrderItem } from "@/types";
 
 const actPlaceOrder = createAsyncThunk(
   "orders/actPlaceOrder",
@@ -29,7 +29,7 @@ const actPlaceOrder = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(axiosErrorHandler(error));
     }
-  }
+  },
 );
 
 export default actPlaceOrder;
