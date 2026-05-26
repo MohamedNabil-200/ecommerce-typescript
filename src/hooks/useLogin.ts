@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { actAuthLogin, resetUI } from "@store/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { actAuthLogin, resetUI } from "@/store/auth/authSlice";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema, loginType } from "@validations/loginSchema";
+import { loginSchema, loginType } from "@/validations/loginSchema";
 
 const useLogin = () => {
   const dispatch = useAppDispatch();

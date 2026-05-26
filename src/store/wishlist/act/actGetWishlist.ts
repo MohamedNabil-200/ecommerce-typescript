@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { axiosErrorHandler } from "@utils";
-import { TProduct } from "@types";
-import { RootState } from "@store/index";
+import { axiosErrorHandler } from "@/utils";
+import { TProduct } from "@/types";
+import { RootState } from "@/store/index";
 
 type TDataType = "productsFullInfo" | "ProductIds";
 type TResponse = TProduct[];
@@ -17,7 +17,7 @@ const actGetWishlist = createAsyncThunk(
     try {
       const userWishlist = await axios.get<{ productId: number }[]>(
         `/wishlist?userId=${auth.user?.id}`,
-        { signal }
+        { signal },
       );
 
       if (!userWishlist.data.length) {
@@ -33,7 +33,7 @@ const actGetWishlist = createAsyncThunk(
           .join("&");
 
         const response = await axios.get<TResponse>(
-          `/products?${concatenatedIds}`
+          `/products?${concatenatedIds}`,
         );
 
         return { data: response.data, dataType: "productsFullInfo" };
@@ -41,7 +41,7 @@ const actGetWishlist = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(axiosErrorHandler(error));
     }
-  }
+  },
 );
 
 export default actGetWishlist;

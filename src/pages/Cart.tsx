@@ -1,7 +1,7 @@
-import useCart from "@hooks/useCart";
-import { Heading } from "@components/common";
-import { CartItemList, CartSubtotalPrice } from "@components/eCommerce";
-import { Loading, LottieHandler } from "@components/feedback";
+import useCart from "@/hooks/useCart";
+import { Heading } from "@/components/common";
+import { CartItemList, CartSubtotalPrice } from "@/components/eCommerce";
+import { Loading, LottieHandler } from "@/components/feedback";
 
 const Cart = () => {
   const {

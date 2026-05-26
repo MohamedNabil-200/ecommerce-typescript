@@ -1,7 +1,7 @@
-import useRegister from "@hooks/useRegister";
+import useRegister from "@/hooks/useRegister";
 import { Navigate } from "react-router-dom";
-import { Heading } from "@components/common";
-import { Input } from "@components/forms";
+import { Heading } from "@/components/common";
+import { Input } from "@/components/forms";
 import { Form, Button, Row, Col, Spinner } from "react-bootstrap";
 
 const Register = () => {
@@ -50,17 +50,17 @@ const Register = () => {
                 formErrors.email?.message
                   ? formErrors.email?.message
                   : emailAvailabilityStatus === "notAvailable"
-                  ? "This email is already in use."
-                  : emailAvailabilityStatus === "failed"
-                  ? "Error from the server."
-                  : ""
+                    ? "This email is already in use."
+                    : emailAvailabilityStatus === "failed"
+                      ? "Error from the server."
+                      : ""
               }
               formText={
                 emailAvailabilityStatus === "checking"
                   ? "We're currently checking the availability of this email address. Please wait a moment."
                   : !emailAvailabilityStatus
-                  ? "We'll never share your email with anyone else."
-                  : ""
+                    ? "We'll never share your email with anyone else."
+                    : ""
               }
               success={
                 emailAvailabilityStatus === "available"

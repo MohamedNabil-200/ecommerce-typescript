@@ -1,7 +1,7 @@
 import { memo } from "react";
-import { ProductInfo } from "@components/eCommerce";
+import { ProductInfo } from "@/components/eCommerce";
 import { Form, Button } from "react-bootstrap";
-import { TProduct } from "@types";
+import { TProduct } from "@/types";
 
 import styles from "./styles.module.css";
 const { cartItem, cartItemSelection } = styles;
@@ -60,7 +60,7 @@ const CartItem = memo(
         </div>
       </div>
     );
-  }
+  },
 );
 
 export default CartItem;

@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { RootState } from "@store/index";
+import { RootState } from "@/store/index";
 import axios from "axios";
-import { axiosErrorHandler } from "@utils";
-import { TProduct } from "@types";
+import { axiosErrorHandler } from "@/utils";
+import { TProduct } from "@/types";
 
 type TResponse = TProduct[];
 
@@ -21,13 +21,13 @@ const actGetProductsByItems = createAsyncThunk(
       const concatenatedIds = itemsIds.map((id) => `id=${id}`).join("&");
       const response = await axios.get<TResponse>(
         `/products?${concatenatedIds}`,
-        { signal }
+        { signal },
       );
       return response.data;
     } catch (error) {
       return rejectWithValue(axiosErrorHandler(error));
     }
-  }
+  },
 );
 
 export default actGetProductsByItems;

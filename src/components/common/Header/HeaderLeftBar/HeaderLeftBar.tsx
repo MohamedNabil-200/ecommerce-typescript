@@ -1,7 +1,7 @@
-import { useAppSelector } from "@store/hooks";
-import { getCartTotalQuantitySelector } from "@store/cart/selectors";
-import WishlistIcon from "@assets/svg/wishlist.svg?react";
-import CartIcon from "@assets/svg/cart.svg?react";
+import { useAppSelector } from "@/store/hooks";
+import { getCartTotalQuantitySelector } from "@/store/cart/selectors";
+import WishlistIcon from "@/assets/svg/wishlist.svg?react";
+import CartIcon from "@/assets/svg/cart.svg?react";
 import HeaderCounter from "../HeaderCounter/HeaderCounter";
 
 import styles from "./styles.module.css";

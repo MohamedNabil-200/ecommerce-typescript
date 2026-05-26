@@ -1,7 +1,7 @@
-import useProducts from "@hooks/useProducts";
-import { GridList, Heading } from "@components/common";
-import { Product } from "@components/eCommerce";
-import { Loading } from "@components/feedback";
+import useProducts from "@/hooks/useProducts";
+import { GridList, Heading } from "@/components/common";
+import { Product } from "@/components/eCommerce";
+import { Loading } from "@/components/feedback";
 
 const Products = () => {
   const { paramsPrefix, loading, error, productFullInfo } = useProducts();

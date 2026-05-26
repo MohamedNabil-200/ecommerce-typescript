@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { axiosErrorHandler } from "@utils";
-import { TCategory } from "@types";
+import { axiosErrorHandler } from "@/utils";
+import { TCategory } from "@/types";
 
 type TResponse = TCategory[];
 
@@ -15,7 +15,7 @@ const actGetCategories = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(axiosErrorHandler(error));
     }
-  }
+  },
 );
 
 export default actGetCategories;

@@ -1,18 +1,18 @@
 import { useCallback, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   actGetProductsByItems,
   cartItemChangeQuantity,
   cartItemRemove,
   cartProductsFullInfoCleanUp,
-} from "@store/cart/cartSlice";
-import { resetOrderStatus } from "@store/orders/ordersSlice";
+} from "@/store/cart/cartSlice";
+import { resetOrderStatus } from "@/store/orders/ordersSlice";
 
 const useCart = () => {
   const dispatch = useAppDispatch();
 
   const { items, productsFullInfo, loading, error } = useAppSelector(
-    (state) => state.cart
+    (state) => state.cart,
   );
 
   const userAccessToken = useAppSelector((state) => state.auth.accessToken);
@@ -22,14 +22,14 @@ const useCart = () => {
     (id: number, quantity: number) => {
       dispatch(cartItemChangeQuantity({ id, quantity }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const removeItemHandler = useCallback(
     (id: number) => {
       dispatch(cartItemRemove(id));
     },
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {

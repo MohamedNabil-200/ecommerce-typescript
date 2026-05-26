@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { actGetOrders, resetOrderStatus } from "@store/orders/ordersSlice";
-import { TProduct } from "@types";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { actGetOrders, resetOrderStatus } from "@/store/orders/ordersSlice";
+import { TProduct } from "@/types";
 
 const useOrders = () => {
   const dispatch = useAppDispatch();
 
   const { loading, error, ordersList } = useAppSelector(
-    (state) => state.orders
+    (state) => state.orders,
   );
 
   const [showModal, setShowModal] = useState(false);
