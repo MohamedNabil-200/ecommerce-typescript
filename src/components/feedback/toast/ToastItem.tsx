@@ -15,7 +15,7 @@ const ToastItem = ({ id, type, title, message }: TToast) => {
     >
       <h5>{title ? title : type}</h5>
       <p>{message}</p>
-      <button className="btn-close" onClick={() => dispatch(removeToast(id))} />
+      <button type="button" aria-label="Dismiss notification" className="btn-close" onClick={() => dispatch(removeToast(id))} />
       <span className="placeholder"></span>
     </div>
   );

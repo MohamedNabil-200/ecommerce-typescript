@@ -39,7 +39,7 @@ const AppRouter = () => {
         <Suspense
           fallback={
             <div style={{ marginTop: "10%" }}>
-              <LottieHandler type="loading" message="Loading pleas wait..." />
+              <LottieHandler type="loading" message="Loading please wait..." />
             </div>
           }
         >
