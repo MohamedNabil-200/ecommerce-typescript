@@ -77,9 +77,11 @@ const Product = memo(
               setIsLoading(false);
               dispatch(
                 addToast({
-                  title: "Failed Operation",
+                  title: "Wishlist operation failed",
                   type: "error",
-                  message: `Failed to add wishlist, error from server`,
+                  message: isLiked
+                    ? `Failed to remove ${title} from wishlist`
+                    : `Failed to add ${title} to wishlist`,
                 }),
               );
             });

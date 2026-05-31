@@ -6,19 +6,24 @@ import { RootState } from "@/store/index";
 const actLikeToggle = createAsyncThunk(
   "wishlist/actLikeToggle",
   async (id: number, thunkAPI) => {
-    const { rejectWithValue, getState } = thunkAPI;
+    const { rejectWithValue, getState, signal } = thunkAPI;
 
     const { auth } = getState() as RootState;
 
     try {
       const isRecordExist = await axios.get(
         `/wishlist?userId=${auth.user?.id}&productId=${id}`,
+        { signal },
       );
       if (isRecordExist.data.length) {
-        await axios.delete(`/wishlist/${isRecordExist.data[0].id}`);
+        await axios.delete(`/wishlist/${isRecordExist.data[0].id}`, { signal });
         return { type: "remove", id };
       } else {
-        await axios.post("/wishlist", { userId: auth.user?.id, productId: id });
+        await axios.post(
+          "/wishlist",
+          { userId: auth.user?.id, productId: id },
+          { signal },
+        );
         return { type: "add", id };
       }
     } catch (error) {

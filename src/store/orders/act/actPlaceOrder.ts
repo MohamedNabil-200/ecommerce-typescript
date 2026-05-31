@@ -7,7 +7,7 @@ import { TOrderItem } from "@/types";
 const actPlaceOrder = createAsyncThunk(
   "orders/actPlaceOrder",
   async (subtotal: number, thunkAPI) => {
-    const { rejectWithValue, getState } = thunkAPI;
+    const { rejectWithValue, getState, signal } = thunkAPI;
     const { cart, auth } = getState() as RootState;
 
     const orderItems = cart.productsFullInfo.map((el) => ({
@@ -19,11 +19,15 @@ const actPlaceOrder = createAsyncThunk(
     }));
 
     try {
-      const response = await axios.post<TOrderItem>("/orders", {
-        userId: auth.user?.id,
-        items: orderItems,
-        subtotal,
-      });
+      const response = await axios.post<TOrderItem>(
+        "/orders",
+        {
+          userId: auth.user?.id,
+          items: orderItems,
+          subtotal,
+        },
+        { signal },
+      );
 
       return response.data;
     } catch (error) {

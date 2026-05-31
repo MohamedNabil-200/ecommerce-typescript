@@ -34,6 +34,7 @@ const actGetWishlist = createAsyncThunk(
 
         const response = await axios.get<TResponse>(
           `/products?${concatenatedIds}`,
+          { signal },
         );
 
         return { data: response.data, dataType: "productsFullInfo" };

@@ -14,7 +14,7 @@ const toastsSlice = createSlice({
     addToast: (state, action: PayloadAction<TToast>) => {
       state.records.push({ ...action.payload, id: nanoid() });
     },
-    removeToast: (state, action) => {
+    removeToast: (state, action: PayloadAction<TToast["id"]>) => {
       state.records = state.records.filter((el) => el.id !== action.payload);
     },
   },

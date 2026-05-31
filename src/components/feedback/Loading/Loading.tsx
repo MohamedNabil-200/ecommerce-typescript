@@ -32,9 +32,11 @@ const Loading = ({
   }
 
   if (status === "failed") {
-    <div>
-      <LottieHandler type="error" message={error as string} />
-    </div>;
+    return (
+      <div>
+        <LottieHandler type="error" message={error as string} />
+      </div>
+    );
   }
 
   return <>{children}</>;
