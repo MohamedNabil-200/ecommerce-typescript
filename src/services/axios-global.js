@@ -1,3 +1,7 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:5005";
+const apiUrl = import.meta.env.VITE_API_URL?.trim();
+if (!apiUrl) {
+  throw new Error("Missing required environment variable: VITE_API_URL");
+}
+axios.defaults.baseURL = apiUrl.replace(/\/+$/, "");
